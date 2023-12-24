@@ -22,6 +22,7 @@ img{
     --white_layer: rgba(255, 255, 255, .5);
     --black_layer: rgba(0, 0, 0, .6);
     --light_white: #EEEEEE;
+    --light_black: #45464E;
 }
 
 .h_sub_title{
@@ -106,7 +107,7 @@ img{
     background: url('../images/bgImg/sideBar.png'), no-repeat;
     background-size: cover;
     background-position: center;
-    min-width: 296px;
+    min-width: 250px;
     width: 25%;
     height: 100vh;
     overflow-y: auto;
@@ -142,8 +143,9 @@ img{
     border-radius: .5rem;
     transition: .3s;
     padding-left: 1.5rem;
+    display: block;
 }
-.sidebar .sidebar_inner .nav-item button{
+.sidebar .sidebar_inner .nav-item .nav-link_aside{
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
@@ -152,15 +154,17 @@ img{
     color: var(--white);
     padding-left: 0.5rem !important;
     transition: .3s;
+    text-decoration: none;
+    display: block;
+    border-radius: .5rem;
+    padding: 0.5rem;
 }
-.sidebar .sidebar_inner .nav-item button img{
+.sidebar .sidebar_inner .nav-item a img{
     margin-right: 0.2rem;
+    margin-top: -0.3rem;
 }
-.sidebar .sidebar_inner .nav-item button:hover{
-    font-size: 1rem;
-}
-.sidebar .sidebar_inner .nav-item button .show:hover{
-    font-size: unset !important;
+.sidebar .sidebar_inner .nav-item:hover .nav-link_aside{
+    font-size: 15px;
 }
 
 .sidebar .sidebar_inner .nav-item .active{
@@ -177,11 +181,8 @@ img{
 .sidebar .sidebar_inner .nav-item .active img{
     background: var(--blue);
 }
-.sidebar .sidebar_inner .nav-item .active#pills-home-tab img{
+.sidebar .sidebar_inner .nav-item .active img{
     background: unset;
-}
-.sidebar .sidebar_inner .nav-item#pills-home-tab img{
-    background: var(--white) !important;
 }
 
 /*=========== Main Content ==========*/
@@ -204,7 +205,25 @@ img{
 }
 .hospital_content_header .hospital_search{
     width: 90%;
+    position: relative;
 }
+#h_top_search_icon{
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    display: none;
+}
+#h_top_search_icon i{
+    color: var(--blue);
+}
+.display_block{
+    display: block !important;
+}
+
 .hospital_content_header .hospital_search form .h_search_bar{
     width: 100%;
     padding: .8rem 1rem;
@@ -213,7 +232,12 @@ img{
 }
 .hospital_search form .h_search_bar:focus{
     outline: 1px solid var(--blue);
+    /* outline: none; */
 }
+.hospital_search form .h_search_bar:focus #h_top_search_icon{
+    display: block;
+}
+
 .hospital_search form .h_search_bar:focus::placeholder{
     opacity: .5;
 }
@@ -487,4 +511,43 @@ img{
 .h_paginate_list .h_paginate_number.active_pagi{
     background: var(--white);
     color: var(--blue);
+}
+
+/*======== Symtomp Design Start ===========*/
+.symtomp_content{
+    background: var(--white_layer);
+    height: 100vh;
+    overflow-y: auto;
+}
+.symtomp_content .symtomp_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+    background: var(--white);
+    padding: 1rem;
+}
+.symtomp_header .symtomp_h_form_div form{
+    display: flex;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--light_black);
+}
+.symtomp_header .symtomp_h_form_div form .symtomp_id_top{
+    display: flex;
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--light_black);
+    padding-left: 0.5rem;
+    border-color: transparent;
+    outline-color: transparent;
+    outline: none;
 }
