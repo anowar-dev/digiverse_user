@@ -1,12 +1,27 @@
-// Hospital list search bar icon view
-// $(".h_search_bar").focus(function () {
-//   console.log($("#h_top_search_icon"));
-//   $("#h_top_search_icon").classList.toggle("display_block");
+// Sitebar menu active class added function
+
+// $(".nav-link_aside").click(function(){
+
 // });
 
-// let search_bar = document.querySelector(".h_search_bar");
-// console.log(search_bar)
-// search_bar.addEventListener('focus', function(){
-//     let search_icon = document.getElementById("#h_top_search_icon");
-//     search_icon.classList.add("display_block");
-// })
+let sitebarmenu = document.querySelectorAll(".nav-link_aside");
+let count = 1;
+for(let i = 0; i<sitebarmenu.length; i++){
+    sitebarmenu[i].addEventListener('click', function(){
+        let activeClas = document.querySelector('.active')
+        activeClas.classList.remove("active");
+        sitebarmenu[i].classList.add('active');
+    })
+}
+
+// Symtomp popup btn
+let predic_btn = document.querySelector(".predict_btn");
+predic_btn.addEventListener('click', function(){
+    let popup = document.querySelector(".symtomp_popup");
+    popup.classList.add("display_block");
+})
+let popup_close = document.querySelector(".dep_popup_close");
+popup_close.addEventListener('click', function(){
+    let popup = document.querySelector(".symtomp_popup");
+    popup.classList.remove("display_block");
+})
