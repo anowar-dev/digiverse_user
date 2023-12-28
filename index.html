@@ -27,7 +27,7 @@
         <div class="mycontainer">
             <div class="main_body">
                 <!---------- Sidebar -------->
-                <div class="sidebar">
+                <div class="sidebar d-none d-lg-block">
                     <div class="sitebar_layer"></div>
                     <div class="sidebar_inner_main">
                         <div class="logo_div">
@@ -36,7 +36,7 @@
                         <ul class="nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
                             <!-- symtomp -->
                             <li class="nav-item" role="presentation">
-                                <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symtomp</a>
+                                <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptoms</a>
                             </li>
                             <!-- Symtomp history -->
                             <li class="nav-item" role="presentation">
@@ -45,13 +45,46 @@
 
                             <!---------- Hospitals ------->
                             <li class="nav-item" role="presentation">
-                                <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt=""> Hospitals</a>
+                                <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt="">Nearest Hospitals</a>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <a href="#" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt=""> Doctor Profile</a>
+                                <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+
+                <!----------- Mobile Sitebar ------------->
+                <div class="mobile_sitebar row d-lg-none">
+                    <div class="sitebar_layer"></div>
+                    <div class="">
+                        <div class="offcanvas offcanvas-start" id="myoffcanvas">
+                            <div class="logo_div offcanvas-header">
+                                <a href="index.html"><img src="./asset/images/logo/White-DigiVerse-Logo 1.png" alt=""></a>
+                                <button type="button" class="" data-bs-dismiss="offcanvas"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <ul class="offcanvas-body nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                                <!-- symtomp -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptoms</a>
+                                </li>
+                                <!-- Symtomp history -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="symtomp_history.html" class="nav-link_aside"><img src="./asset/images/Icons/Vector.png" alt=""> Symptom History</a>
+                                </li>
+
+                                <!---------- Hospitals ------->
+                                <li class="nav-item" role="presentation">
+                                    <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt="">Nearest Hospitals</a>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                    <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="offcanvas_toggle_btn" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
                     </div>
                 </div>
 
@@ -64,11 +97,12 @@
                                 <div class="hospital_content_header symtomp_header">
                                     <div class="hospital_search symtomp_h_form_div">
                                         <form action="#">
-                                            <span class="s_id_title">Symptoms ID</span>
-                                            <input type="text" value="#1231231231241" class="symtomp_id_top">
+                                            <input class="symptom_search" type="search" placeholder="search">
+                                            <button class="symptom_search_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                                         </form>
                                     </div>
                                     <div class="hospital_profile">
+                                        <button class="symptom_search_btn_profile"><i class="fa-solid fa-magnifying-glass"></i></button>
                                         <p><i class="fa-sharp fa-solid fa-bell"></i></p>
                                         <a href="#"><img src="./asset/images/profile/profile 1 (1).png" alt=""></a>
                                     </div>
@@ -76,12 +110,12 @@
                                 <div class="symtomp_body">
                                     <div class="symtomp_body_inner">
                                         <div class="symtomp_body_title">
-                                            <h5 class="welcome">Welcome to</h5>
+                                            <!-- <h5 class="welcome">Welcome to</h5> -->
                                             <h1 class="title_main">Department Suggestion Portal</h1>
                                             <div class="share_get_div">
                                                 <p>share symptoms | Get suggestions</p>
                                             </div>
-                                            <p class="minimum_share">Share at least <b class="symtompsM">5 Symptoms</b> to get result and suggestions</p>
+                                            <p class="minimum_share">SHARE ATLEAST FIVE SYMPTOMS</p>
                                         </div>
 
                                         <!------ Select box ------->
@@ -89,9 +123,9 @@
                                             <form class="symtomp_select_form" action="#">
                                                 <div class="symtomp_select_group">
                                                     <div class="symtomp_select">
-                                                        <h6 class="symtomp_number">Symtomp 1:</h6>
+                                                        <h6 class="symtomp_number">Symptom 1:</h6>
                                                         <select name="#" id="#" class="select_main">
-                                                            <option value="1" selected>Select your Symtomps</option>
+                                                            <option value="1" selected>Select your Symptoms</option>
                                                             <option value="2">I have Headache</option>
                                                             <option value="3">I have Footache</option>
                                                             <option value="4">I have Cold</option>
@@ -100,9 +134,9 @@
                                                         </select>
                                                     </div>
                                                     <div class="symtomp_select">
-                                                        <h6 class="symtomp_number">Symtomp 1:</h6>
+                                                        <h6 class="symtomp_number">Symptom 2:</h6>
                                                         <select name="#" id="#" class="select_main">
-                                                            <option value="1" selected>Select your Symtomps</option>
+                                                            <option value="1" selected>Select your Symptoms</option>
                                                             <option value="2">I have Headache</option>
                                                             <option value="3">I have Footache</option>
                                                             <option value="4">I have Cold</option>
@@ -111,9 +145,9 @@
                                                         </select>
                                                     </div>
                                                     <div class="symtomp_select">
-                                                        <h6 class="symtomp_number">Symtomp 1:</h6>
+                                                        <h6 class="symtomp_number">Symptom 3:</h6>
                                                         <select name="#" id="#" class="select_main">
-                                                            <option value="1" selected>Select your Symtomps</option>
+                                                            <option value="1" selected>Select your Symptoms</option>
                                                             <option value="2">I have Headache</option>
                                                             <option value="3">I have Footache</option>
                                                             <option value="4">I have Cold</option>
@@ -122,9 +156,9 @@
                                                         </select>
                                                     </div>
                                                     <div class="symtomp_select">
-                                                        <h6 class="symtomp_number">Symtomp 1:</h6>
+                                                        <h6 class="symtomp_number">Symptom 4:</h6>
                                                         <select name="#" id="#" class="select_main">
-                                                            <option value="1" selected>Select your Symtomps</option>
+                                                            <option value="1" selected>Select your Symptoms</option>
                                                             <option value="2">I have Headache</option>
                                                             <option value="3">I have Footache</option>
                                                             <option value="4">I have Cold</option>
@@ -133,9 +167,9 @@
                                                         </select>
                                                     </div>
                                                     <div class="symtomp_select">
-                                                        <h6 class="symtomp_number">Symtomp 1:</h6>
+                                                        <h6 class="symtomp_number">Symptom 5:</h6>
                                                         <select name="#" id="#" class="select_main">
-                                                            <option value="1" selected>Select your Symtomps</option>
+                                                            <option value="1" selected>Select your Symptoms</option>
                                                             <option value="2">I have Headache</option>
                                                             <option value="3">I have Footache</option>
                                                             <option value="4">I have Cold</option>

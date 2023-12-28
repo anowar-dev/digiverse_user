@@ -27,7 +27,7 @@
         <div class="mycontainer">
             <div class="main_body">
                 <!---------- Sidebar -------->
-                <div class="sidebar">
+                <div class="sidebar d-none d-lg-block">
                     <div class="sitebar_layer"></div>
                     <div class="sidebar_inner_main">
                         <div class="logo_div">
@@ -36,7 +36,7 @@
                         <ul class="nav sidebar_inner mx-auto nav-treeview flex-column">
                             <!-- symtomp -->
                             <li class="nav-item" role="presentation">
-                                <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symtomp</a>
+                                <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptoms</a>
                             </li>
                             <!-- Symtomp history -->
                             <li class="nav-item" role="presentation">
@@ -45,13 +45,46 @@
 
                             <!---------- Hospitals ------->
                             <li class="nav-item" role="presentation">
-                                <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt=""> Hospitals</a>
+                                <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt="">Nearest Hospitals</a>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <a href="#" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt=""> Doctor Profile</a>
+                                <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+
+                <!----------- Mobile Sitebar ------------->
+                <div class="mobile_sitebar row d-lg-none">
+                    <div class="sitebar_layer"></div>
+                    <div class="">
+                        <div class="offcanvas offcanvas-start" id="myoffcanvas">
+                            <div class="logo_div offcanvas-header">
+                                <a href="index.html"><img src="./asset/images/logo/White-DigiVerse-Logo 1.png" alt=""></a>
+                                <button type="button" class="" data-bs-dismiss="offcanvas"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <ul class="offcanvas-body nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
+                                <!-- symtomp -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptoms</a>
+                                </li>
+                                <!-- Symtomp history -->
+                                <li class="nav-item" role="presentation">
+                                    <a href="symtomp_history.html" class="nav-link_aside"><img src="./asset/images/Icons/Vector.png" alt=""> Symptom History</a>
+                                </li>
+
+                                <!---------- Hospitals ------->
+                                <li class="nav-item" role="presentation">
+                                    <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt="">Nearest Hospitals</a>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                    <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="offcanvas_toggle_btn" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
                     </div>
                 </div>
 
@@ -76,10 +109,9 @@
                                 <div class="symtomp_body symtomp_history_body">
                                     <div class="symtomp_body_inner">
                                         <div class="symtomp_body_title">
-                                            <h5 class="welcome">Welcome to</h5>
                                             <h1 class="title_main">Department Suggestion Portal</h1>
                                             <div class="share_get_div">
-                                                <p>share symptoms | Get suggestions</p>
+                                                <p>Share Symptoms | Get Suggestions</p>
                                             </div>
                                             <p class="minimum_share minimum_share_history">Symtomp History</p>
                                         </div>
@@ -101,8 +133,8 @@
                                                         <td><input class="history_check" type="checkbox"></td>
                                                         <td>#1231231231241</td>
                                                         <td>
-                                                            <a class="popup_open" href="#"><span>I have  headache</span>, <span>eyeache</span> , <span>High fever</span>...</a>
-                                                            <div class="history_popup symtomp_popup d-none">
+                                                            <a class="popup_open" id="popup1" href="#"><span>I have  headache</span>, <span>eyeache</span> , <span>High fever</span>...</a>
+                                                            <div class="history_popup symtomp_popup d-none" id="popup1">
                                                                 <div class="history_popup_inner symtomp_popup_inner">
                                                                     <div class="popup_header">
                                                                         <h3 class="popup_depertment">My Symptoms</h3>
@@ -129,8 +161,8 @@
                                                         <td><input class="history_check" type="checkbox"></td>
                                                         <td>#1231231231241</td>
                                                         <td>
-                                                            <a class="popup_open" href="#"><span>I have  test</span>, <span>eyeache</span> , <span>High fever</span>...</a>
-                                                            <div class="history_popup symtomp_popup d-none">
+                                                            <a class="popup_open" id="popup2" href="#"><span>I have  test</span>, <span>eyeache</span> , <span>High fever</span>...</a>
+                                                            <div class="history_popup symtomp_popup d-none" id="popup2">
                                                                 <div class="history_popup_inner symtomp_popup_inner">
                                                                     <div class="popup_header">
                                                                         <h3 class="popup_depertment">My Symptoms</h3>
