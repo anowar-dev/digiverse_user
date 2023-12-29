@@ -192,8 +192,8 @@ img{
     border-radius: .5rem;
     padding: .1rem .3rem;
     position: absolute;
-    left: 1.5rem;
-    top: 1rem;
+    left: 2rem;
+    top: 1.5rem;
     z-index: 1;
     transition: all .3s;
 }
@@ -247,6 +247,7 @@ img{
 }
 .sidebar .sidebar_inner .nav-item .nav-link_aside{
     font-size: 14px;
+    text-transform: uppercase;
     font-weight: 400;
     line-height: 20px;
     text-align: left;
@@ -279,9 +280,7 @@ img{
 .sidebar .sidebar_inner .nav-item .active img{
     background: var(--blue);
 }
-.sidebar .sidebar_inner .nav-item .active img{
-    background: unset;
-}
+
 
 /*======== Mobile Sitebar =======*/
 #myoffcanvas .offcanvas-body .nav-item .active{
@@ -336,7 +335,7 @@ img{
     justify-content: space-between;
     align-items: center;
     column-gap: 2%;
-    padding: .5rem 1rem;
+    padding: .8rem;
 }
 .hospital_content_header .hospital_search{
     width: 90%;
@@ -650,11 +649,11 @@ img{
 .main .symtomp_main{
     min-height: 100vh;
     background: var(--blue);
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 .symtomp_content{
     background: var(--white);
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: auto;
     border-radius: 1rem;
 }
@@ -724,6 +723,7 @@ img{
     padding: 1rem;
     background: var(--white);
     text-align: center;
+    min-height: 100vh;
 } 
 .symtomp_body_inner .symtomp_body_title{
     margin-top: 2rem;
@@ -770,10 +770,30 @@ color: var(--black30);
 .symtomp_select_group .symtomp_select{
     width: 100%;
     text-align: left;
+    padding: 1rem !important;
 }
+
+/* Live search css starts */
+.select2-container{
+    display: unset;
+}
+.select2-selection{
+    position: relative;
+}
+.select2-container--default .select2-selection--single{
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    height: fit-content;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+    margin-top: 2px;
+}
+/* Live Search css end */
+
+
 .symtomp_select .select_main{
     width: 100%;
-    padding: 0.8rem;
+    padding: 1rem !important;
     border-radius: .3rem;
     opacity: .7;
     background: transparent;
@@ -1207,6 +1227,52 @@ color: var(--black30);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    column-gap: 1%;
+    row-gap: 1%;
+}
+.padient_body_inner .patient_box{
+    width: 35%;
+}
+.padient_body_inner .patient_heart_rate{
+    width: 40%;
+}
+.padient_body_inner .patient_right_site{
+    width: 23%;
+}
+.patient_box .patient_box_inner{
+    border-radius: .5rem;
+    background: var(--white);
+    padding: 1rem;
+    text-align: center;
+}
+.patient_box_inner .p_box_top{
+    padding: 1rem;
+    text-align: center;
+}
+.p_box_top .patient_name{
+    width: fit-content;
+    margin: .7rem auto;
+}
+.p_box_top .patient_img{
+    margin-bottom: 1rem;
+}
+.p_box_top .patient_subtitle span{
+    font-size: 12px;
+    font-weight: 700;
+    opacity: .5;
+    margin: .2rem;
+}
+.p_box_bottom table{
+    width: 100%;
+}
+.p_box_bottom table tr td{
+    border: .5px solid rgba(0, 0, 0, .2);
+}
+.p_box_bottom table tr td h5{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    opacity: .8;
 }
 /*============ Responsive Started ===================*/
 
@@ -1241,6 +1307,25 @@ color: var(--black30);
     .hospital_content_header .hospital_search{
         width: 86%;
     }
+
+    /* Symptom History */
+    .s_history_table .history_table input[type="checkbox"]{
+        width: 1rem;
+        height: 1rem;
+    }
+    .h_table_body tr td{
+        font-size: 13px;
+    }
+    .h_table_head tr th{
+        font-size: 13px;
+    }
+    .symtomp_body_inner .s_history_table{
+        overflow-x: auto;
+    }
+    .s_history_table .history_table{
+        width: 900px !important;
+        overflow: auto;
+    }
 }
 
 /* Max-width 992px */
@@ -1259,6 +1344,12 @@ color: var(--black30);
     
 }
 
+@media (max-width: 810px) {
+    .symtomp_body_content .symtomp_select_group{
+        grid-template-columns: auto auto;
+    }
+}
+
 /* Max-width 767px */
 @media (max-width: 767px) {
     /* Symptom page */
@@ -1271,9 +1362,7 @@ color: var(--black30);
     .hospital_content_header .hospital_search{
         width: 83%;
     }
-    .symtomp_body_content .symtomp_select_group{
-        grid-template-columns: auto auto;
-    }
+    
 
     /* Hospital page */
     .h_list_ul .h_list_single{
@@ -1321,6 +1410,19 @@ color: var(--black30);
         text-align: center;
         margin: auto;
     }
+    .symtomp_body_content .symtomp_select_group{
+        grid-template-columns: auto;
+    }
+    .h_data .h_doctor_div{
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+    .h_single_locate_div p{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
 }
 /* Max-width 500px */
 @media (max-width: 500px) {
@@ -1334,6 +1436,7 @@ color: var(--black30);
     }
     .hospital_content_header .hospital_search{
         width: 100%;
+        margin-left: unset;
     }
     .symtomp_header .symtomp_h_form_div form {
         margin-left: 1rem;
@@ -1350,7 +1453,5 @@ color: var(--black30);
     .symtomp_body_title .share_get_div p, .minimum_share{
         font-size: 14px;
     }
-    .symtomp_body_content .symtomp_select_group{
-        grid-template-columns: auto;
-    }
+    
 }

@@ -51,3 +51,17 @@ searchbtn.addEventListener("focus", function () {
   searchbar.classList.add("display_block");
 });
 
+
+// Bootstrap live search
+ $(document).ready(function () {
+   $("#selectBox1").select2({
+    //  placeholder: "Select an option",
+    //  allowClear: true,
+   });
+   $("#selectBox2").select2();
+   $("#selectBox3").select2();
+   $("#selectBox4").select2();
+   $("#selectBox5").select2();
+   $("#selectBox6").select2();
+ });
+
