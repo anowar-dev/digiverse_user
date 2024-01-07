@@ -73,7 +73,7 @@
                             <ul class="offcanvas-body nav sidebar_inner mx-auto flex-column nav-pills mb-3" id="pills-tab" role="tablist">
                                 <!-- symtomp -->
                                 <li class="nav-item" role="presentation">
-                                    <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptoms</a>
+                                    <a href="index.html" class="nav-link_aside active" ><img src="./asset/images/Icons/IconSetMain.png" alt="">Symptom</a>
                                 </li>
                                 <!-- Symtomp history -->
                                 <li class="nav-item" role="presentation">
@@ -82,15 +82,14 @@
 
                                 <!---------- Hospitals ------->
                                 <li class="nav-item" role="presentation">
-                                    <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt="">Nearest Hospitals</a>
+                                    <a href="hospital.html" class="nav-link_aside" ><img src="./asset/images/Icons/IconSet.png" alt=""> Hospitals</a>
                                 </li>
 
                                 <li class="nav-item" role="presentation">
                                     <a href="patient_profile.html" class="nav-link_aside"><img src="./asset/images/Icons/IconSet.png" alt="">Patient Profile</a>
                                 </li>
                             </ul>
-                        </div>
-                        <button class="offcanvas_toggle_btn" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
+                        </div>  
                     </div>
                 </div>
 
@@ -101,6 +100,7 @@
                         <div class="symtomp_main">
                             <div class="symtomp_content">
                                 <div class="hospital_content_header symtomp_header">
+                                    <button class="offcanvas_toggle_btn d-lg-none" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
                                     <div class="hospital_search symtomp_h_form_div">
                                         <form action="#">
                                             <input class="symptom_search" type="search" placeholder="search">
@@ -121,7 +121,6 @@
                                             <div class="share_get_div">
                                                 <p>share symptoms | Get suggestions</p>
                                             </div>
-                                            <p class="minimum_share">SHARE ATLEAST FIVE SYMPTOMS</p>
                                         </div>
 
                                         <!------ Select box ------->
@@ -195,7 +194,8 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                                                <p class="minimum_share">SHARE ATLEAST FIVE SYMPTOMS</p>
+                                                <!-- Predict btns -->
                                                 <div class="symtomp_select_btns">
                                                     <h3 class="select_confirm">Do you want to add more symptoms?</h3>
                                                     <div class="s_select_btns">

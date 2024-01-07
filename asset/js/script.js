@@ -5,7 +5,7 @@ let count = 1;
 for (let i = 0; i < sitebarmenu.length; i++) {
   sitebarmenu[i].addEventListener("click", function () {
     let activeClas = document.querySelector(".active");
-    if (activeClas === true) {
+    if (activeClas == true) {
       return;
     } else {
       activeClas.classList.remove("active");
@@ -46,7 +46,7 @@ for (let i = 0; i < popup_close_ok.length; i++) {
 // Search bar
 let searchbtn = document.querySelector(".symptom_search_btn_profile");
 searchbtn.addEventListener("focus", function () {
-  this.classList.add("display_none")
+  this.classList.add("display_none");
   let searchbar = document.querySelector(".symtomp_h_form_div form");
   searchbar.classList.add("display_block");
 });
@@ -54,14 +54,14 @@ searchbtn.addEventListener("focus", function () {
 
 // Bootstrap live search
  $(document).ready(function () {
-   $("#selectBox1").select2({
-    //  placeholder: "Select an option",
-    //  allowClear: true,
+   $(
+     "#selectBox1, #selectBox2, #selectBox3, #selectBox4, #selectBox5, #selectBox6"
+   ).select2();
+   $(
+     "#selectBox1, #selectBox2, #selectBox3, #selectBox4, #selectBox5, #selectBox6"
+   ).select2({
+    width: '100%'
    });
-   $("#selectBox2").select2();
-   $("#selectBox3").select2();
-   $("#selectBox4").select2();
-   $("#selectBox5").select2();
-   $("#selectBox6").select2();
  });
 
+// Activity chart

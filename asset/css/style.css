@@ -14,6 +14,9 @@ body{
 img{
     max-width: 100%;
 }
+html{
+    scroll-behavior: smooth;
+}
 /*========= Global CSS =========*/
 :root{
     --blue: #182D5A;
@@ -172,7 +175,7 @@ img{
     background: var(--white);
     border: 1px solid var(--white);
     border-radius: .5rem;
-    padding: .1rem .4rem;
+    padding: .1rem 6px 0 6px;
     transition: .3s;
 }
 
@@ -184,16 +187,22 @@ img{
 }
 .offcanvas-header button i{
     color: var(--blue);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
+.offcanvas-header{
+    margin-bottom: 2rem;
+}
+ .hospital_content_header .offcanvas_toggle_btn{
+    position: unset;
+ }
 .offcanvas_toggle_btn{
     background: var(--blue);
     border: 1px solid var(--blue);
     border-radius: .5rem;
-    padding: .1rem .3rem;
+    padding: .2rem .3rem 0 .3rem;
     position: absolute;
     left: 2rem;
-    top: 1.5rem;
+    top: 2.1rem;
     z-index: 1;
     transition: all .3s;
 }
@@ -283,7 +292,7 @@ img{
 
 
 /*======== Mobile Sitebar =======*/
-#myoffcanvas .offcanvas-body .nav-item .active{
+#myoffcanvas .offcanvas-body .nav-item .nav-link_aside.active{
     background: var(--white);
     font-size: 14px;
     font-weight: 700 !important;
@@ -292,6 +301,7 @@ img{
     text-align: left;
     color: var(--blue) !important;
     width: 100%;
+    padding-left: 1rem;
 }
 #myoffcanvas .offcanvas-body .nav-item{
     width: 90%;
@@ -322,23 +332,34 @@ img{
 
 /*========== Hospital List =========*/
 .hospital_content{
-    background: var(--white_layer);
+    background: var(--blue);
     height: 100%;
     min-height: 100vh;
     z-index: 11;
     padding-bottom: 1.5rem;
+    padding-top: 1rem;
 }
-.hospital_content .hospital_content_header{
+.hospital_header_main{
     width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 2px 0 var(--blue);
+    z-index: 1;
+}
+.hospital_content_header{
     background: var(--white) !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 2%;
-    padding: .8rem;
+    padding: 1rem;
+    border-radius: .5rem;
 }
+
 .hospital_content_header .hospital_search{
-    width: 90%;
+    width: 100%;
     position: relative;
 }
 #h_top_search_icon{
@@ -526,9 +547,9 @@ img{
     padding-left: 0;
 }
 .h_list_ul .h_list_single{
-    margin: 1rem 3rem;
+    margin: 1rem;
     background: var(--light_white);
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     padding: 1.5rem;
 }
 .h_list_single .h_single_content{
@@ -589,8 +610,6 @@ img{
 /*-------------- Hospital paginate -------------*/
 .h_paginate{
     text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
 }
 .h_paginate .h_paginate_list .pnr{
     background: transparent;
@@ -647,24 +666,25 @@ img{
 
 /*======== Symtomp Design Start ===========*/
 .main .symtomp_main{
-    min-height: 100vh;
+    height: 100vh;
     background: var(--blue);
-    padding: 1rem;
 }
 .symtomp_content{
-    background: var(--white);
-    min-height: 100vh;
+    height: 100vh;
     overflow-y: auto;
     border-radius: 1rem;
 }
 .symtomp_content .symtomp_header{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background: var(--white);
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    margin: 1rem 1rem 0 1rem;
+    border-radius: .5rem .5rem 0 0;
 }
-
 .symtomp_header .symtomp_h_form_div form{
     position: relative;
 }
@@ -719,11 +739,16 @@ img{
     outline-color: transparent;
     outline: none;
 }
+.symtomp_body{
+    padding-bottom: 1rem;
+}
 .symtomp_body .symtomp_body_inner{
     padding: 1rem;
     background: var(--white);
     text-align: center;
-    min-height: 100vh;
+    border-radius: 0 0 .5rem .5rem;
+    margin: 0 1rem;
+    min-height: calc(100vh - 6rem);
 } 
 .symtomp_body_inner .symtomp_body_title{
     margin-top: 2rem;
@@ -755,17 +780,19 @@ color: var(--black30);
 }
 .minimum_share{
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 19px;
     letter-spacing: 0em;
     color: var(--black30);
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
+    text-align: left;
+    margin-left: 1rem;
 }
 .symtomp_body_content .symtomp_select_group{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 2rem;
+    grid-gap: .5;
 }
 .symtomp_select_group .symtomp_select{
     width: 100%;
@@ -784,12 +811,16 @@ color: var(--black30);
     padding-top: .4rem;
     padding-bottom: .4rem;
     height: fit-content;
+    border-radius: .5rem;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
     margin-top: 2px;
 }
 /* Live Search css end */
-
+.select2-container .select2-selection--single .select2-selection__rendered{
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+}
 
 .symtomp_select .select_main{
     width: 100%;
@@ -809,6 +840,7 @@ color: var(--black30);
     font-weight: 400;
     color: #000000;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 .symtomp_select .select_main :active{
     opacity: 1;
@@ -1141,7 +1173,7 @@ color: var(--black30);
     color: var(--blue);
 }
 .symtomp_history_body{
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .history_popup_body{
     margin-top: 2rem;
@@ -1196,49 +1228,43 @@ color: var(--black30);
 
 /*========== Patien Profile =============*/
 .main .patient_content{
-    background: var(--black_layer);
-    position: absolute;
-    top: 0;
-    left: 0;
+    background: var(--blue);
     width: 100%;
+    max-width: 100%;
     height: 100%;
     min-height: 100vh;
 }
+.patient_content .patient_content_inner{
+    height: 100vh;
+    max-width: 100%;
+    overflow-y: auto;
+}
 .p_header_right_ul{
     margin: 0;
+}
+.p_header_right_ul .p_header_li{
+    margin-left: 2rem;
+}
+.p_header_right_ul .p_header_li:first-child{
+    margin-left: unset;
 }
 .p_header_right_ul .p_header_li a{
     font-size: 1rem;
     font-weight: 700;
     color: var(--black);
     transition: all .3s;
+    opacity: .5;
 }
 .p_header_right_ul .p_header_li a:hover{
-    opacity: .6;
+    opacity: 1;
 }
 .p_header_left .p_header_top{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--blue);
+    color: var(--black);
+    opacity: .9;
 }
 
-.patient_content_body .padient_body_inner{
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    column-gap: 1%;
-    row-gap: 1%;
-}
-.padient_body_inner .patient_box{
-    width: 35%;
-}
-.padient_body_inner .patient_heart_rate{
-    width: 40%;
-}
-.padient_body_inner .patient_right_site{
-    width: 23%;
-}
 .patient_box .patient_box_inner{
     border-radius: .5rem;
     background: var(--white);
@@ -1264,15 +1290,388 @@ color: var(--black30);
 }
 .p_box_bottom table{
     width: 100%;
+    border-top: .5px solid rgba(0, 0, 0, .2);
+
 }
 .p_box_bottom table tr td{
-    border: .5px solid rgba(0, 0, 0, .2);
+    border-right: .5px solid rgba(0, 0, 0, .2);
+    padding-top: 1rem;
+}
+.p_box_bottom table tr td:last-child{
+    border-right: unset;
 }
 .p_box_bottom table tr td h5{
     font-size: 16px;
     font-weight: 700;
     color: var(--black);
     opacity: .8;
+}
+.patient_content_inner .patient_content_body{
+    margin: 1rem;
+}
+.patient_header .p_left_header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 1rem;
+}
+/* patient left */
+.p_Allergies_box .p_Allergies_box_ul1{
+    padding: 1rem 0;
+}
+.p_Allergies_box .p_Allergies_box_ul1 li{
+    border-top: 1px solid rgba(0, 0, 0, .5);
+    padding: 1rem 0;
+}
+.patient_box_inner .p_Allergies_box{
+    padding: 2rem 0;
+}
+.patient_box_inner .p_Allergies_box_btns{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin: 2rem 0;
+}
+.p_Allergies_box_btns .p_add_btn{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--blue);
+    padding: 0.2rem 2rem;
+    border-radius: .3rem;
+    transition: all .3s;
+    border: 1px solid var(--blue);
+}
+.p_Allergies_box_btns .p_add_btn:hover{
+    background: var(--white);
+    color: var(--blue);
+}
+.p_Allergies_box_btns .p_edit_btn{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--white);
+    padding: 0.2rem 1.2rem;
+    border-radius: .3rem;
+    transition: all .3s;
+    border: 1px solid var(--white);
+}
+.p_Allergies_box_btns .p_edit_btn i{
+    font-size: 14px;
+    color: var(--blue);
+    margin-left: .5rem;
+}
+.p_Allergies_box_btns .p_edit_btn:hover{
+    border-color: var(--blue);
+}
+
+/* Patient middle */
+.patient_heart_inner .p_body_watermar{
+    padding: 1.5rem;
+    position: relative;
+    background: url('../images/patient_profile/HUMAN\ 1.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+.patient_heart_rate .heart{
+    background: var(--white);
+    border-radius: .5rem;
+}
+.p_body_top_left .p_content_big{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black30);
+}
+.p_body_rate_bottom table tr td{
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    padding-top: 1rem;
+}
+.p_body_rate_bottom table tr td .p_content_bold{
+    text-align: center;
+}
+.p_body_rate_bottom table tr td .p_light_small{
+    text-align: center;
+}
+.p_body_rate_bottom table tr td:last-child{
+    border-right: unset;
+}
+.p_body_activity_chart{
+    width: 100%;
+    height: fit-content;
+    background: #f1f1f1;
+    border-radius: .5rem;
+    margin-top: 1rem;
+    padding: 1.4rem;
+}
+.p_body_activity_chart .p_activity_title{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    opacity: .5;
+}
+.p_body_activity_chart .p_activity_footer span{
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+    opacity: .9;
+    margin-right: 2.5rem;
+}
+.p_body_activity_chart .p_activity_footer button{
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+    opacity: .9;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    padding: 0.1rem .5rem;
+    margin-right: 2.5rem;
+}
+.p_body_activity_chart .p_activity_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+    margin: 1rem auto;
+    width: 100%;
+    height: 180px;
+}
+.p_activity_box .p_activity_range{
+    width: fit-content;
+    height: 100%;
+}
+.p_activity_range .p_range_value{
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+    opacity: .5;
+    margin-bottom: 0;
+    line-height: 400%;
+}
+.p_activity_box .p_activity_column{
+    width: 90%;
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+}
+.p_column_single_activity{
+    background: linear-gradient(180deg, #3F8FDF 0%, #1A395A 100%);
+    margin-right: 1.5rem;
+    width: 6%;
+}
+.p_column_single_activity.h45{
+    height: 45%;
+}
+.p_column_single_activity.h50{
+    height: 50%;
+}
+.p_column_single_activity.h40{
+    height: 40%;
+}
+.p_column_single_activity.h90{
+    height: 90%;
+}
+.p_column_single_activity.h95{
+    height: 95%;
+}
+.p_column_single_activity.h85{
+    height: 85%;
+}
+.p_column_single_activity.h60{
+    height: 60%;
+}
+.p_column_single_activity.h62{
+    height: 62%;
+}
+
+/* P Blood Label */
+.p_body_blood_labels .p_blood_label_inner{
+    background: var(--white);
+    width: 100%;
+    border-radius: .5rem;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    height: 260px;
+}
+.p_blood_label_inner .blood_chart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.p_blood_label_inner .blood_labels_title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+    opacity: .5;
+}
+.blood_chart_single .blood_chart_top{
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    opacity: .5;
+    text-align: center;
+    margin: auto;
+}
+.blood_chart_single .blood_chart_bottom{
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    opacity: .9;
+    text-align: center;
+    margin-bottom: 0;
+}
+.blood_chart_single .blood_chart_column{
+    width: 2rem;
+    height: 8.5rem;
+    background: #EAEEF1;
+    margin: 0.5rem auto;
+    border-radius: .5rem;
+    position: relative;
+}
+.blood_chart_single .blood_chart_column.h55::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 56%;
+    background: linear-gradient(#3F8FDF, #3272B3);
+    left: 0;
+    bottom: 0;
+    border-radius: .5rem;
+}
+.blood_chart_single .blood_chart_column.h43::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 43%;
+    background: linear-gradient(#3881C8, #1A395A);
+    left: 0;
+    bottom: 0;
+    border-radius: .5rem;
+}
+.blood_chart_single .blood_chart_column.h73::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 73%;
+    background: linear-gradient(#3F8FDF, #2B649C);
+    left: 0;
+    bottom: 0;
+    border-radius: .5rem;
+}
+.blood_chart_single .blood_chart_column.h52::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 52%;
+   background: linear-gradient(#3F8FDF, #2B649C);
+    left: 0;
+    bottom: 0;
+    border-radius: .5rem;
+}
+.blood_chart_single .blood_chart_column.h69::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 69%;
+    background: linear-gradient(#3F8FDF, #142C44);
+    left: 0;
+    bottom: 0;
+    border-radius: .5rem;
+}
+
+/*========= Patient right ==========*/
+.patient_right_inner_row .patient_bp{
+    background: var(--white);
+    border-radius: .5rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1.6rem 1rem;
+}
+.patient_bp .p_bp_content{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+.patient_bp .heart_bit{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+.p_bp_bottom img{
+    margin-top: 1.5rem;
+}
+.patient_right_inner_row .patient_oxigen{
+    background: var(--white);
+    border-radius: .5rem;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.patient_oxigen .p_oxigen_content{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+}
+.patient_oxigen .pocb{
+    border-top: 1px solid #ddd;
+}
+.p_oxigen_content .p_content_bold{
+    text-align: center;
+}
+.p_oxigen_content img{
+    margin-top: 1rem;
+}
+.patient_right_inner_row .patient_body_activity{
+    background: var(--white);
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+}
+.patient_body_activity .body_activity{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black);
+    text-align: center;
+}
+.patient_body_activity .activity_para{
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+    text-align: center;
+    opacity: .5;
+}
+.patient_body_activity .body_activity_bnt{
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--black);
+    border-color: transparent;
+    outline: none;
+    border-radius: .3rem;
+    padding: 0.1rem 1rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+.patient_body_activity .pbaimg{
+    text-align: center;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.patient_body_activity .pbaimg span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-weight: 700;
 }
 /*============ Responsive Started ===================*/
 
@@ -1284,9 +1683,12 @@ color: var(--black30);
     .hospital_content_header .hospital_search{
         width: 90%;
     }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: 1.5rem;
+    }
 }
 
-/* Max-width 1400px */
+/* Max-width 1200px */
 @media (max-width: 1200px) {
     .hospital_content_header .hospital_profile{
         width: 12%;
@@ -1307,7 +1709,9 @@ color: var(--black30);
     .hospital_content_header .hospital_search{
         width: 86%;
     }
-
+    .p_body_activity_chart .p_activity_footer span {
+        margin-right: 1rem;
+    }
     /* Symptom History */
     .s_history_table .history_table input[type="checkbox"]{
         width: 1rem;
@@ -1326,6 +1730,10 @@ color: var(--black30);
         width: 900px !important;
         overflow: auto;
     }
+    /* Symptom */
+    .symtomp_body_content .symtomp_select_group{
+        grid-template-columns: auto auto;
+    }
 }
 
 /* Max-width 992px */
@@ -1334,21 +1742,35 @@ color: var(--black30);
         margin-left: -1.5rem;
     }
     .symtomp_header .symtomp_h_form_div form{
-        margin-left: 4rem;
+        margin-left: 2rem;
     }
 
     /* Hospital page */
     .hospital_content_header .hospital_search{
-        margin-left: 4rem;
+        width: 100%;
     }
-    
+
+    /* Patient profile for 992 px */
+    .p_header_right_ul .p_header_li{
+        margin-left: 1.9rem;
+    }
+    .p_body_activity_chart .p_activity_footer span {
+        margin-right: 2rem;
+    }
+    .p_body_activity_chart .p_activity_footer button {
+        margin-right: 2rem;
+    }
 }
 
-@media (max-width: 810px) {
-    .symtomp_body_content .symtomp_select_group{
-        grid-template-columns: auto auto;
+@media (max-width: 850px) {
+    .p_body_activity_chart .p_activity_footer span {
+        margin-right: 1rem;
+    }
+    .p_body_activity_chart .p_activity_footer button {
+        margin-right: 1rem;
     }
 }
+
 
 /* Max-width 767px */
 @media (max-width: 767px) {
@@ -1377,6 +1799,34 @@ color: var(--black30);
         left: 1rem;
         bottom: 2rem;
     }
+
+    /* Patient profile for 768px */
+    .patient_header{
+        flex-direction: column;
+        row-gap: .5rem;
+    }
+    .p_column_single_activity{
+        margin-right: 1rem;
+    }
+    .p_body_activity_chart .p_activity_footer button {
+        margin-right: .5rem;
+        font-size: 10px;
+    }
+    .p_body_activity_chart .p_activity_footer span{
+        font-size: 10px;
+    }
+}
+@media (max-width: 650px) {
+    .symtomp_body_content .symtomp_select_group{
+        grid-template-columns: auto;
+        margin: auto 3rem;
+    }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: 0.5rem;
+    }
+    .p_column_single_activity{
+        margin-right: 0.7rem;
+    }
 }
 
 /* Max-width 576px */
@@ -1391,6 +1841,10 @@ color: var(--black30);
     .hospital_content_header .hospital_search{
         width: 80%;
     }
+    .symtomp_body_content .symtomp_select_group{
+        margin: auto 2rem;
+    } 
+
     /* Hospital page */
     .h_single_content .h_photo_data{
         flex-direction: column;
@@ -1410,9 +1864,7 @@ color: var(--black30);
         text-align: center;
         margin: auto;
     }
-    .symtomp_body_content .symtomp_select_group{
-        grid-template-columns: auto;
-    }
+    
     .h_data .h_doctor_div{
         margin-left: auto;
         margin-right: auto;
@@ -1423,6 +1875,25 @@ color: var(--black30);
         margin-right: auto;
         text-align: center;
     }
+
+    /* Patient Profile for 576px */
+    .hospital_content_header.patient_header{
+        padding-right: -1rem;
+        margin-right: 0;
+    }
+    .p_header_right_ul .p_header_li{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .p_header_right .p_header_right_ul{
+        padding-left: 0;
+    }
+    .offcanvas_toggle_btn i{
+        font-size: 1.2rem;
+    }
+    .patient_right_inner_row{
+        margin-top: .5rem;
+    }
 }
 /* Max-width 500px */
 @media (max-width: 500px) {
@@ -1430,6 +1901,11 @@ color: var(--black30);
     .symtomp_content .symtomp_header{
         flex-direction: column-reverse;
     }
+    .symtomp_body_content .symtomp_select_group{
+        margin: auto;
+    } 
+
+    /* Hospital page */
     .hospital_content_header .hospital_profile{
         width: 100%;
         margin-bottom: 2rem;
@@ -1440,9 +1916,18 @@ color: var(--black30);
     }
     .symtomp_header .symtomp_h_form_div form {
         margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+    .hospital_header_main .hospital_content_header{
+        flex-direction: column-reverse;
+        padding-bottom: 0;
+    }
+    .hospital_header_main .patient_header{
+        flex-direction: column;
+        padding-bottom: 1rem;
     }
     .offcanvas-header button i{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     #myoffcanvas .logo_div a{
         max-width: 10rem;
@@ -1453,5 +1938,36 @@ color: var(--black30);
     .symtomp_body_title .share_get_div p, .minimum_share{
         font-size: 14px;
     }
-    
+    .hospital_content_header .offcanvas_toggle_btn {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+    .hospital_header_main .hospital_content_header .offcanvas_toggle_btn {
+        left: 2rem;
+    }
+
+    /* Patient profile for 500px */
+    .p_header_left .p_header_top{
+        font-size: 1.2rem;
+    }
+    .p_header_right_ul .p_header_li{
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .patient_header .p_left_header .offcanvas_toggle_btn{
+        margin-top: 2.2rem;
+    }
+    .p_header_right .p_header_right_ul{
+        padding-left: 1.5rem;
+    }
+}
+
+@media (max-width: 369px) {
+    .p_header_right .p_header_right_ul li{
+        margin-left: 0.8rem;
+    }
 }

@@ -16,11 +16,6 @@
 
     <!------------ Bootstrap CSS ----------------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- Select2 CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
-
     
 
     <!------------ Custom CSS -------------->
@@ -89,7 +84,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="offcanvas_toggle_btn" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
                     </div>
                 </div>
 
@@ -97,31 +91,35 @@
                 <!----------------- Patient Content ------------>
                 <div class="main_content">
                     <div class="main">
-                        <!---------- Hospital List ---------->
                         <div class="patient_content">
                             <div class="patient_content_inner">
 
                                 <!-- Patient Header Content -->
-                                <div class="patient_header_content bg-white p-4 d-flex justify-content-between">
-                                    <div class="p_header_left">
-                                        <h3 class="p_header_top">Preventative Care Dashboard</h3>
-                                    </div>
-                                    <div class="p_header_right">
-                                        <ul class="p_header_right_ul d-flex">
-                                            <li class="p_header_li ms-5"><a class="text-decoration-none" href="#"><img src="./asset/images/patient_profile/Frame.png" alt=""></a></li>
-                                            <li class="p_header_li ms-5"><a class="text-decoration-none" href="#">Daily</a></li>
-                                            <li class="p_header_li ms-5"><a class="text-decoration-none" href="#">Weekly</a></li>
-                                            <li class="p_header_li ms-5"><a class="text-decoration-none" href="#">Monthly</a></li>
-                                        </ul>
+                                <div class="hospital_header_main mt-3">
+                                    <div class="hospital_content_header patient_header">
+                                        <div class="p_left_header">
+                                            <button class="offcanvas_toggle_btn d-lg-none" data-bs-target="#myoffcanvas" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></button>
+                                            <div class="p_header_left">
+                                                <h3 class="p_header_top">Preventative Care Dashboard</h3>
+                                            </div>
+                                        </div>
+                                        <div class="p_header_right">
+                                            <ul class="p_header_right_ul d-flex">
+                                                <li class="p_header_li"><a class="text-decoration-none" href="#"><img src="./asset/images/patient_profile/Frame.png" alt=""></a></li>
+                                                <li class="p_header_li"><a class="text-decoration-none" href="#">Daily</a></li>
+                                                <li class="p_header_li"><a class="text-decoration-none" href="#">Weekly</a></li>
+                                                <li class="p_header_li"><a class="text-decoration-none" href="#">Monthly</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Patient Body -->
                                 <div class="patient_content_body">
-                                    <div class="padient_body_inner">
-                                        <div class="patient_box bg-white card">
+                                    <div class="padient_body_inner row">
+                                        <div class="patient_box col-12 col-sm-6 col-xl-4 pe-xl-0">
                                             <!-- Patient profile -->
-                                            <div class=" patient_box_inner">
+                                            <div class=" patient_box_inner mb-3">
                                                 <div class="p_box_top">
                                                     <img class="patient_img" src="./asset/images/patient_profile/Rectangle 12.png" alt="">
                                                     <h3 class="patient_name p_content_bold">Rebecca Rowe</h3>
@@ -157,26 +155,42 @@
                                                     </table>
                                                 </div>
                                             </div>
+
+                                            <!-- Allergies -->
+                                            <div class="patient_box_inner">
+                                                <div class="p_Allergies_box">
+                                                    <h5 class="p_content_bold">Allergies</h5>
+                                                    <ul class="p_Allergies_box_ul1">
+                                                        <li class="p_light_small">Nuts</li>
+                                                        <li class="p_light_small">Penicillin</li>
+                                                        <li class="p_content_bold">Conditions</li>
+                                                        <li class="p_light_small">Glaucoma</li>
+                                                    </ul>
+                                                    <div class="p_Allergies_box_btns">
+                                                        <a href="#" class="p_add_btn">Add</a>
+                                                        <a href="#" class="p_edit_btn">Edit <i class="fa-solid fa-pen"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="patient_heart_rate bg-white card">
-                                            <div class="patient_heart_inner">
+                                        <div class="patient_heart_rate mt-3 mt-sm-0 col-12 col-sm-6 col-xl-5">
+                                            <div class="patient_heart_inner heart">
                                                 <!-- Patient Heart rate -->
-                                                <div class="p_body_watermark">
-                                                    <img src="./asset/images/patient_profile/HUMAN 1.png" alt="">
-                                                    <div class="p_body_top_line">
+                                                <div class="p_body_watermar ">
+                                                    <div class="p_body_top_line d-flex justify-content-between">
                                                         <div class="p_body_top_left">
                                                             <p class="p_light_text">Heart Rate</p>
-                                                            <h2>84 <span class="p_content_bold">bpm</span></h2>
+                                                            <h2 class="p_content_big">84 <span class="p_content_bold">bpm</span></h2>
                                                         </div>
-                                                        <div class="p_body_top_right">
-                                                            <img src="./asset/images/patient_profile/loveGreen.png" alt="">
+                                                        <div class="p_rate_top_right">
+                                                            <img src="./asset/images/patient_profile/loveBlue.png" alt="">
                                                         </div>
                                                     </div>
-                                                    <div class="p_body_middle">
+                                                    <div class="p_body-rate_middle my-3 text-center">
                                                         <img src="./asset/images/patient_profile/Vector 1.png" alt="">
                                                     </div>
-                                                    <div class="p_body_bottom">
-                                                        <table>
+                                                    <div class="p_body_rate_bottom w-100">
+                                                        <table class="w-100">
                                                             <tr>
                                                                 <td>
                                                                     <h5 class="p_content_bold">165</h5>
@@ -195,17 +209,107 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="patient_right_site">
-                                            <!-- Patient BP -->
-                                            <div class="patient_bp bg-white card">
-                                                <img class="heart_bit" src="./asset/images/patient_profile/New Text Document (2) 1.png" alt="">
-                                                <div class="p_bp_content">
-                                                    <p class="p_light_text">Blood Pressure</p>
-                                                    <h5 class="p_content_bold">130/80 mmHG</h5>
+                                            <div class="patient_heart_inner">
+                                                <!-- Patient Activites -->
+                                                <div class="p_body_activity_chart">
+                                                     <div id="activityChart">
+                                                        <h2 class="p_activity_title">Recent Activity</h2>
+                                                        <div class="p_activity_box">
+                                                            <div class="p_activity_column">
+                                                                <div class="p_column_single_activity h45" data-value="45"></div>
+                                                                <div class="p_column_single_activity h50" data-value="50"></div>
+                                                                <div class="p_column_single_activity h40" data-value="40"></div>
+                                                                <div class="p_column_single_activity h90" data-value="80"></div>
+                                                                <div class="p_column_single_activity h95" data-value="85"></div>
+                                                                <div class="p_column_single_activity h85" data-value="75"></div>
+                                                                <div class="p_column_single_activity h60" data-value="60"></div>
+                                                                <div class="p_column_single_activity h62" data-value="65"></div>
+                                                            </div>
+                                                            <div class="p_activity_range">
+                                                                <p class="p_range_value">400</p>
+                                                                <p class="p_range_value">300</p>
+                                                                <p class="p_range_value">200</p>
+                                                                <p class="p_range_value">100</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p_activity_footer">
+                                                            <span>9AM</span>
+                                                            <span>12PM</span>
+                                                            <button>3PM-4.30PM</button>
+                                                            <span>5PM</span>
+                                                        </div>
+                                                     </div>
                                                 </div>
-                                                <div class="p_bp_bottom">
-                                                    <img src="./asset/images/patient_profile/Vector 4.png" alt="">
+                                            </div>
+                                            <div class="patient_heart_inner">
+                                                <!-- Patient Blood labels -->
+                                                <div class="p_body_blood_labels">
+                                                    <div class="p_blood_label_inner">
+                                                        <h3 class="blood_labels_title">Blood Levels</h3>
+                                                        <div class="blood_chart">
+                                                            <div class="blood_chart_single">
+                                                                <p class="blood_chart_top">Vitamin</p>
+                                                                <div class="blood_chart_column h55"></div>
+                                                                <p class="blood_chart_bottom">55.2</p>
+                                                            </div>
+                                                            <div class="blood_chart_single">
+                                                                <p class="blood_chart_top">HDL</p>
+                                                                <div class="blood_chart_column h43"></div>
+                                                                <p class="blood_chart_bottom">43</p>
+                                                            </div>
+                                                            <div class="blood_chart_single">
+                                                                <p class="blood_chart_top">LDL</p>
+                                                                <div class="blood_chart_column h73"></div>
+                                                                <p class="blood_chart_bottom">73</p>
+                                                            </div>
+                                                            <div class="blood_chart_single">
+                                                                <p class="blood_chart_top">Sodium</p>
+                                                                <div class="blood_chart_column h52"></div>
+                                                                <p class="blood_chart_bottom ">51.6</p>
+                                                            </div>
+                                                            <div class="blood_chart_single">
+                                                                <p class="blood_chart_top">Glucose</p>
+                                                                <div class="blood_chart_column h69"></div>
+                                                                <p class="blood_chart_bottom">69</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="patient_right_site col-12 col-xl-3">
+                                            <!-- Patient BP -->
+                                            <div class="row patient_right_inner_row me-1">
+                                                <div class="patient_bp col-11 ms-auto col-sm-5 mx-sm-auto col-xl-12 mx-auto mt-2 mt-xl-0">
+                                                    <img class="heart_bit" src="./asset/images/patient_profile/New Text Document (2) 1.png" alt="">
+                                                    <div class="p_bp_content">
+                                                        <p class="p_light_text">Blood Pressure</p>
+                                                        <h5 class="p_content_bold">130/80 mmHG</h5>
+                                                    </div>
+                                                    <div class="p_bp_bottom">
+                                                        <img src="./asset/images/patient_profile/Vector_red.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="patient_oxigen col-11 col-sm-5 mx-sm-auto ms-auto col-xl-12 mx-auto mt-2 mt-xl-0">
+                                                    <div class="p_oxigen_content">
+                                                        <p class="p_light_text">Oxygen Level</p>
+                                                        <h5 class="p_content_bold">93%</h5>
+                                                        <img src="./asset/images/patient_profile/Vector32.png" alt="">
+                                                    </div>
+                                                    <div class="p_oxigen_content pocb">
+                                                        <p class="p_light_text">Temperature</p>
+                                                        <h5 class="p_content_bold">36.8 <span>&#8451;</span></h5>
+                                                        <img src="./asset/images/patient_profile/Vector34.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="patient_body_activity col-11 ms-auto col-sm-7 col-md-6 mx-md-auto col-xl-12 mx-auto mt-2 mt-xl-0">
+                                                    <h5 class="body_activity">Body Activity</h5>
+                                                    <button class="body_activity_bnt">ACTIVITY DETECTED</button>
+                                                    <p class="activity_para">We have detected an abnormal activity and sent a notification to the doctor.</p>
+                                                    <div class="pbaimg">
+                                                        <img src="./asset/images/patient_profile/watch1.png" alt="">
+                                                        <span>1</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -229,12 +333,8 @@
     
     <!------- Jquery cdn ------>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- Select2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 
     <!-------------- Custom js ----------->
