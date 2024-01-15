@@ -60,8 +60,20 @@ searchbtn.addEventListener("focus", function () {
    $(
      "#selectBox1, #selectBox2, #selectBox3, #selectBox4, #selectBox5, #selectBox6"
    ).select2({
-    width: '100%'
+     width: "100%",
    });
+
  });
 
-// Activity chart
+// Location Search
+$(document).ready(function () {
+  $(".location_select").selectpicker();
+});
+
+
+// user logout
+$(document).ready(function(){
+  $(".user_pannel").click(function(){
+    $(".user_account").toggleClass('display_block');
+  });
+})

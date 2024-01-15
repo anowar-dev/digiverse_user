@@ -67,9 +67,6 @@ html{
     letter-spacing: 0em;
     transition: .3s;
 }
-.h_sub_title:hover{
-    opacity: .7;
-}
 .h_sub_title2{
     letter-spacing: 0em;
     line-height: 10px;
@@ -109,10 +106,12 @@ html{
     transition: .3s;
     outline: 0;
     border-radius: .5rem;
+    text-decoration: none;
 }
 .btn_blue:hover{
     background: var(--white);
     color: var(--blue);
+    text-decoration: none;
 }
 
 .display_block{
@@ -411,34 +410,59 @@ html{
     cursor: pointer;
     color: var(--blue);
 }
-.hospital_content_header .hospital_profile a{
+.hospital_content_header .hospital_profile .user_pannel{
    width: 32px;
    height: 32px;
+   border-radius: .5rem;
 }
-.hospital_content_header .hospital_profile a img{
+.hospital_content_header .hospital_profile .user_pannel img{
    width: 100%;
+   
 }
 .hospital_content .hospital_content_body{
-    margin: 1rem 3rem;
+    margin: 1rem;
     background: var(--light_white);
     border-radius: .3rem;
-    display: none;
 }
-.hospital_content_body .hospital_body_top{
+.hospital_content_body .hospital_body_top .location_search{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem;
     column-gap: 2%;
 }
+
 .hospital_body_top .hospital_top_left{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 1rem;
-    width: 70%;
+    width: 75%;
 }
 .hospital_body_top .hospital_top_right{
-    width: 28%;
+    width: 21%;
+}
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+    min-width: 180px;
+    margin-bottom: -.5rem;
+}
+.bootstrap-select .dropdown-toggle{
+    margin-top: .5rem;
+    width: 100%;
+    margin-bottom: 0;
+    color: var(--blue);
+    padding: .2rem 0;
+    margin-right: -.2rem;
+}
+.bootstrap-select .dropdown-menu li a span.text{
+    font-size: .8rem;
+}
+.dropdown-item.active, .dropdown-item:active{
+    background: var(--blue);
+}
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner{
+    font-size: .8rem;
+    color: var(--black);
 }
 .hospital_top_left .top_left_inner{
     display: flex;
@@ -469,6 +493,7 @@ html{
 }
 .top_left_inner .h_location_div p{
     margin-bottom: -.5rem;
+    margin-top: 0.5rem;
 }
 .top_left_inner .h_location_div{
     margin-bottom: 0.5rem;
@@ -530,6 +555,9 @@ html{
 .hospital_top_right .top_right_search button:hover{
     background: var(--light_white);
     color: var(--blue);
+}
+.bootstrap-select>.dropdown-toggle{
+    z-index: unset;
 }
 
 
@@ -813,6 +841,12 @@ color: var(--black30);
     height: fit-content;
     border-radius: .5rem;
 }
+.location_select .select2-container--default .select2-selection--single{
+    margin-top: 1rem;
+    box-shadow: none;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
     margin-top: 2px;
 }
@@ -820,6 +854,10 @@ color: var(--black30);
 .select2-container .select2-selection--single .select2-selection__rendered{
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
+}
+.location_select .select2-selection--single{
+    margin-top: 1rem;
+    box-shadow: none;
 }
 
 .symtomp_select .select_main{
@@ -1673,6 +1711,39 @@ color: var(--black30);
     color: var(--white);
     font-weight: 700;
 }
+
+/* User Account */
+.hospital_profile{
+    position: relative;
+}
+.hospital_profile .user_account{
+    position: absolute;
+    right: -1rem;
+    top: 100%;
+    width: 15rem;
+    background: #ffffff;
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: 0 0 2px 0 var(--blue);
+    margin-top: 1rem;
+    display: none;
+    border: 1px solid var(--blue);
+}
+.hospital_profile .user_account .btn_blue{
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+}
+.hospital_profile .user_account .dahsboard{
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+.user_account.display_block{
+    display: block;
+}
 /*============ Responsive Started ===================*/
 
 /* Max-width 1400px */
@@ -1686,6 +1757,34 @@ color: var(--black30);
     .p_body_activity_chart .p_activity_footer span{
         margin-right: 1.5rem;
     }
+    .hospital_body_top .hospital_top_right{
+        width: 23%;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .hospital_content_body .hospital_body_top .location_search{
+        flex-direction: column;
+    }
+    .hospital_body_top .hospital_top_left{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .hospital_body_top .hospital_top_right{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        column-gap: 1rem;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 200px;
+    }
 }
 
 /* Max-width 1200px */
@@ -1695,6 +1794,9 @@ color: var(--black30);
     }
     .hospital_content_header .hospital_search{
         width: 88%;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 175px;
     }
 }
 
@@ -1734,6 +1836,16 @@ color: var(--black30);
     .symtomp_body_content .symtomp_select_group{
         grid-template-columns: auto auto;
     }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 150px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 140px;
+    }
 }
 
 /* Max-width 992px */
@@ -1760,6 +1872,14 @@ color: var(--black30);
     .p_body_activity_chart .p_activity_footer button {
         margin-right: 2rem;
     }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 195px;
+    }
+}
+@media (max-width: 900px) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 180px;
+    }
 }
 
 @media (max-width: 850px) {
@@ -1768,6 +1888,14 @@ color: var(--black30);
     }
     .p_body_activity_chart .p_activity_footer button {
         margin-right: 1rem;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 160px;
+    }
+}
+@media (max-width: 800px) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 150px;
     }
 }
 
@@ -1799,6 +1927,12 @@ color: var(--black30);
         left: 1rem;
         bottom: 2rem;
     }
+    .hospital_body_top .hospital_top_left{
+        grid-template-columns: auto auto;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 235px;
+    }
 
     /* Patient profile for 768px */
     .patient_header{
@@ -1816,6 +1950,11 @@ color: var(--black30);
         font-size: 10px;
     }
 }
+@media (max-width: 700px) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 210px;
+    }
+}
 @media (max-width: 650px) {
     .symtomp_body_content .symtomp_select_group{
         grid-template-columns: auto;
@@ -1826,6 +1965,9 @@ color: var(--black30);
     }
     .p_column_single_activity{
         margin-right: 0.7rem;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 176px;
     }
 }
 
@@ -1874,6 +2016,12 @@ color: var(--black30);
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+    }
+    .hospital_body_top .hospital_top_left{
+        grid-template-columns: auto;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 370px;
     }
 
     /* Patient Profile for 576px */
@@ -1946,6 +2094,9 @@ color: var(--black30);
     .hospital_header_main .hospital_content_header .offcanvas_toggle_btn {
         left: 2rem;
     }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 320px;
+    }
 
     /* Patient profile for 500px */
     .p_header_left .p_header_top{
@@ -1953,6 +2104,11 @@ color: var(--black30);
     }
     .p_header_right_ul .p_header_li{
         margin-right: 0;
+    }
+}
+@media (max-width: 460px) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 280px;
     }
 }
 
@@ -1964,10 +2120,21 @@ color: var(--black30);
     .p_header_right .p_header_right_ul{
         padding-left: 1.5rem;
     }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 250px;
+    }
+}
+@media (max-width: 390px) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 220px;
+    }
 }
 
 @media (max-width: 369px) {
     .p_header_right .p_header_right_ul li{
         margin-left: 0.8rem;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 200px;
     }
 }
