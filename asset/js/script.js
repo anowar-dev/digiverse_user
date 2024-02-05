@@ -1,20 +1,16 @@
-// Sitebar menu active class added function
 
 let sitebarmenu = document.querySelectorAll(".nav-link_aside");
-let count = 1;
+
 for (let i = 0; i < sitebarmenu.length; i++) {
   sitebarmenu[i].addEventListener("click", function () {
     let activeClas = document.querySelector(".active");
-    if (activeClas == true) {
-      return;
-    } else {
+    if (activeClas && activeClas.classList.contains("active")) {
       activeClas.classList.remove("active");
-      this.classList.add("active");
     }
-
-    // sitebarmenu[i].classList.add('active');
+    this.classList.add("active");
   });
 }
+
 
 // Popup open btn
 let predic_btn = document.querySelectorAll(".popup_open");
@@ -63,7 +59,33 @@ searchbtn.addEventListener("focus", function () {
      width: "100%",
    });
 
+
+   Datepicker
+    $("#fullCalendar").fullCalendar({
+      header: {
+        left: "prev,next today",
+        center: "title",
+        right: "month,agendaWeek,agendaDay",
+      },
+      defaultView: "month",
+      events: [
+        {
+          title: "Event 1",
+          start: "2024-01-31",
+        },
+        {
+          title: "Event 2",
+          start: "2024-02-01",
+          end: "2024-02-03",
+        },
+        // Add more events as needed
+      ],
+    });
+
+
  });
+
+ 
 
 // Location Search
 $(document).ready(function () {
@@ -77,3 +99,4 @@ $(document).ready(function(){
     $(".user_account").toggleClass('display_block');
   });
 })
+
