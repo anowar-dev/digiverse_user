@@ -718,6 +718,7 @@ html{
     top: 0;
     margin: 1rem 1rem 0 1rem;
     border-radius: .5rem .5rem 0 0;
+    z-index: 1;
 }
 .symtomp_header .symtomp_h_form_div form{
     position: relative;
@@ -831,7 +832,7 @@ color: var(--black30);
 .symtomp_select_group .symtomp_select{
     width: 100%;
     text-align: left;
-    padding: 1rem !important;
+    padding: 1rem;
 }
 
 /* Live search css starts */
@@ -1910,6 +1911,7 @@ color: var(--black30);
     font-size: .8rem;
     font-weight: 700;
     padding: .5rem;
+    background: transparent;
 }
 .dr_weekly_select option{
     font-size: .8rem;
@@ -2275,8 +2277,8 @@ color: var(--black30);
     border-radius: 50%;
     background: var(--blue5);
     position: absolute;
-    left: 10rem;
-    bottom: 3.5rem;
+    left: 12.5rem;
+    bottom: 4.5rem;
     z-index: 1;
 }
 .drActivity_middle .dr_border_div{
@@ -2284,8 +2286,8 @@ color: var(--black30);
     height: 3rem;
     background: linear-gradient(var(--blue4), var(--blue1), transparent);
     position: absolute;
-    left: 10.5rem;
-    bottom: 1rem;
+    left: 13rem;
+    bottom: 2rem;
 }
 .drActivity_middle .activity_wm{
     position: absolute;
@@ -2330,6 +2332,41 @@ color: var(--black30);
 
 
 /*============ Responsive Started ===================*/
+/* Max width 1800px */
+@media (max-width: 1800px) {
+    .drActivity_middle .dr_sercle_div{
+        left: 11.5rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 12rem;
+    }
+}
+
+
+/* Max width 1700px */
+@media (max-width: 1700px) {
+    .drActivity_middle .dr_sercle_div{
+        left: 10.5rem;
+        bottom: 4rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 11rem;
+        bottom: 1.5rem;
+    }
+}
+
+
+/* Max width 1550px */
+@media (max-width: 1550px) {
+    .drActivity_middle .dr_sercle_div{
+        left: 9.5rem;
+        bottom: 3.5rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 10rem;
+        bottom: 1rem;
+    }
+}
 
 /* Max-width 1400px */
 @media (max-width: 1400px) {
@@ -2347,6 +2384,14 @@ color: var(--black30);
     }
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 160px;
+    }
+    /* Doctor Profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 8.8rem;
+        bottom: 3rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 9.3rem;
     }
 }
 
@@ -2370,6 +2415,19 @@ color: var(--black30);
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 200px;
     }
+    /* Patient profile */
+    .p_body_blood_labels .p_blood_label_inner{
+        height: auto;
+        padding: 1.4rem;
+    }
+    /* Doctor Profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 8rem;
+        bottom: 2.8rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 8.5rem;
+    }
 }
 
 /* Max-width 1200px */
@@ -2382,6 +2440,44 @@ color: var(--black30);
     }
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 175px;
+    }
+    /* Patient profile */
+    .p_body_blood_labels .p_blood_label_inner{
+        padding: 1rem 1.5rem;
+    }
+    .patient_right_inner_row{
+        margin-top: .8rem;
+    }
+
+}
+@media (max-width: 1199px) {
+    /* Doctor Profile */
+    .doctor_right_inner{
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .doctor_right_inner .doctor_right_top{
+        width: 49%;
+        padding: 3rem 1rem;
+    }
+    .doctor_right_inner .doctor_right_bottom{
+        width: 49%;
+    }
+    .dr_bottom_inner .dr_chambers{
+        padding: 0.2rem .8rem;
+        margin-bottom: 0.65rem;
+    }
+    .calender_form{
+        border: unset;
+    }
+    .drActivity_middle .dr_sercle_div{
+        left: 11.2rem;
+        bottom: 4rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 11.8rem;
     }
 }
 
@@ -2424,12 +2520,33 @@ color: var(--black30);
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 150px;
     }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 10rem;
+        bottom: 3.6rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 10.5rem;
+    }
 }
 
 
 @media (max-width: 1024px) {
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 140px;
+    }
+    .p_body_blood_labels .p_blood_label_inner{
+        padding: 1.5rem;
+    }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 9rem;
+        bottom: 3.2rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 9.5rem;
     }
 }
 
@@ -2460,10 +2577,32 @@ color: var(--black30);
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 195px;
     }
+    .p_body_blood_labels .p_blood_label_inner{
+        padding: 1rem 1.5rem;
+    }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 12rem;
+        bottom: 4.5rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 12.5rem;
+        bottom: 2rem;
+    }
 }
 @media (max-width: 900px) {
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 180px;
+    }
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 11rem;
+        bottom: 4rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 11.5rem;
+        bottom: 1.5rem;
     }
 }
 
@@ -2477,12 +2616,33 @@ color: var(--black30);
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 160px;
     }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 10rem;
+        bottom: 4rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 10.5rem;
+        bottom: 1.5rem;
+    }
 }
 @media (max-width: 800px) {
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 150px;
     }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 9rem;
+        bottom: 3.5rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 9.5rem;
+        bottom: 1rem;
+    }
 }
+
 
 
 /* Max-width 767px */
@@ -2534,10 +2694,26 @@ color: var(--black30);
     .p_body_activity_chart .p_activity_footer span{
         font-size: 10px;
     }
+    .p_body_blood_labels .p_blood_label_inner{
+        padding: 1.5rem;
+    }
 }
 @media (max-width: 700px) {
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 210px;
+    }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 8rem;
+        bottom: 3rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 8.5rem;
+    }
+    .dr_info_top .dr_subTitles{
+        max-width: unset;
+        margin: .4rem auto;
     }
 }
 @media (max-width: 650px) {
@@ -2554,8 +2730,73 @@ color: var(--black30);
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 176px;
     }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 7.5rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 8rem;
+    }
 }
 
+
+@media (max-width: 600px) {
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 6.5rem;
+        bottom: 2.5rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 7rem;
+        height: 2rem;
+    }
+    .dr_left_inner .dr_left_top{
+        flex-direction: column;
+    }
+    .dr_left_top .dr_profile{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .dr_left_top .dr_activity_percent{
+        width: 100%;
+    }
+    .doctor_right_inner{
+        flex-direction: column;
+        background: var(--white);
+        margin-top: 1rem;
+    }
+    .doctor_right_inner .doctor_right_top{
+        width: 100%;
+        padding: 1rem;
+    }
+    .doctor_right_top .dr_calender{
+        border-bottom: 1px solid #716E6EBD;
+    }
+    .doctor_right_inner .doctor_right_bottom{
+        width: 100%;
+    }
+    .dr_bottom_inner .dr_chambers{
+        padding: .5rem .8rem;
+        margin-bottom: 1rem;
+    }
+    .drActivity_bottom .drActivity_months{
+        margin-top: 0;
+        padding-left: 0;
+    }
+    .drActivity_months .months_single{
+        font-size: .8rem;
+    }
+    .dr_middleIdiv .Dnumber{
+        font-size: .8rem;
+    }
+    .dr_middleIdiv .Dborder{
+        width: 90%;
+    }
+    .dr_left_bottom{
+        padding: 1.5rem 1rem;
+    }
+}
 /* Max-width 576px */
 @media (max-width: 576px) {
     /* symptom page */
@@ -2626,10 +2867,19 @@ color: var(--black30);
     }
     .patient_right_inner_row{
         margin-top: .5rem;
+    }.p_column_single_activity{
+        margin-right: 2rem;
     }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: 3.5rem;
+    }
+    .p_body_activity_chart .p_activity_footer button{
+        margin-right: 5rem;
+    }
+
 }
 /* Max-width 500px */
-@media (max-width: 500px) {
+@media (max-width: 520px) {
     /*Symptom Page */
     .symtomp_content .symtomp_header{
         flex-direction: column-reverse;
@@ -2690,10 +2940,63 @@ color: var(--black30);
     .p_header_right_ul .p_header_li{
         margin-right: 0;
     }
+    .p_column_single_activity{
+        margin-right: 1.5rem;
+    }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: 2.5rem;
+    }
+    .p_body_activity_chart .p_activity_footer button{
+        margin-right: 3rem;
+    }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 5.5rem;
+        bottom: 2.2rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 6rem;
+        bottom: 0.6rem;
+    }
 }
 @media (max-width: 460px) {
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 280px;
+    }
+    .p_column_single_activity{
+        margin-right: 1.2rem;
+    }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: 2rem;
+    }
+    .p_body_activity_chart .p_activity_footer button{
+        margin-right: 2rem;
+    }
+    .patient_right_inner_row .patient_bp{
+        width: 97%;
+        margin-right: 0 !important;
+    }
+    .patient_right_inner_row .patient_oxigen{
+        width: 97%;
+        margin-right: 0 !important;
+    }
+    .patient_right_inner_row .patient_body_activity {
+        width: 97%;
+        margin-right: 0 !important;
+    }
+    .symtomp_select_group .symtomp_select{
+        padding: 1rem 0.5rem;
+    }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 4.5rem;
+        bottom: 1.8rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 5rem;
+        bottom: 0.5rem;
     }
 }
 
@@ -2708,6 +3011,59 @@ color: var(--black30);
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
         min-width: 250px;
     }
+    .p_column_single_activity{
+        margin-right: 1rem;
+    }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: 1.5rem;
+    }
+    .p_body_activity_chart .p_activity_footer button{
+        margin-right: 1.5rem;
+    }
+
+    /* Doctor Profile */
+    .drActivity_months .months_single{
+        font-size: .7rem;
+    }
+    .dr_middleIdiv .Dnumber{
+        font-size: .7rem;
+    }
+    .progress_circle{
+        width: 100px;
+        height: 100px;
+    }
+    .content_div .dr_degree{
+        font-size: 1rem;
+    }
+    .content_div .dr_h_name{
+        font-size: 12px;
+    }
+    .content_div .visit_time{
+        font-size: 12px;
+    }
+    .dr_chamber .icon_div{
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .dr_chamber .icon_div img{
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+}
+@media (max-width: 414px) {
+    .symtomp_select_btns .s_select_btns .select_btn{
+        margin: .5rem;
+        padding: .4rem 1rem;
+    }
+
+    .drActivity_middle .dr_sercle_div{
+        left: 4rem;
+        bottom: 1.5rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 4.5rem;
+    }
 }
 @media (max-width: 390px) {
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
@@ -2715,11 +3071,82 @@ color: var(--black30);
     }
 }
 
-@media (max-width: 369px) {
+@media (max-width: 360px) {
     .p_header_right .p_header_right_ul li{
-        margin-left: 0.8rem;
+        margin-left: 0.6rem;
     }
     .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
-        min-width: 200px;
+        min-width: 205px;
+    }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: 1rem;
+    }
+    .p_body_activity_chart .p_activity_footer button{
+        margin-right: 1rem;
+    }
+    .p_header_left .p_header_top{
+        font-size: 1.1rem;
+    }
+    .offcanvas_toggle_btn i{
+        font-size: 1.1rem;
+    }
+    .p_header_right .p_header_right_ul{
+        padding-left: 1rem;
+    }
+    .p_header_right_ul .p_header_li a{
+        font-size: .9rem;
+    }
+    .symtomp_select_group .symtomp_select{
+        padding: 1rem 0;
+    }
+    .top_left_inner .h_location_i i{
+        padding: 0 .5rem;
+    }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 3.5rem;
+        width: 1rem;
+        height: 1rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 4rem;
+        height: 1.5rem;
+    }
+}
+
+@media (max-width: 340px) {
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 190px;
+    }
+}
+
+@media (max-width: 320px) {
+    .p_column_single_activity{
+        min-width: .7rem;
+    }
+    .p_activity_box .p_activity_column{
+        margin-right: .5rem;
+    }
+    .p_body_activity_chart .p_activity_footer span{
+        margin-right: .5rem;
+    }
+    .p_body_activity_chart .p_activity_footer button{
+        margin-right: .5rem;
+    }
+    .symtomp_select_btns .s_select_btns .select_btn{
+        font-size: 12px;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+        min-width: 180px;
+    }
+
+    /* Doctor profile */
+    .drActivity_middle .dr_sercle_div{
+        left: 3rem;
+        bottom: 1.2rem;
+    }
+    .drActivity_middle .dr_border_div{
+        left: 3.5rem;
     }
 }
