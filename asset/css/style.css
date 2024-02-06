@@ -2115,7 +2115,44 @@ color: var(--black30);
     opacity: 1;
 }
 .dr_calender_years{
-    margin-bottom: -0.5rem;
+    margin-top: 0.2rem;
+    width: 10rem;
+    height: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.translate-100{
+    transform: translate(-100%);
+}
+.translate_0{
+    transform: translate(0);
+    transition: .4s;
+}
+/* .translate_100{
+    transform: translate(100%);
+    transition: .4s;
+} */
+.dr_calender_year_contents.translate_0{
+    transform: translate(0);
+    transition: .4s;
+}
+.dr_calender_year_contents.translate-100{
+    transform: translate(-100%);
+    transition: .4s;
+}
+/* .dr_calender_year_contents.translate_100{
+    transform: translate(100%);
+    transition: .4s;
+} */
+.dr_calender_year_contents{
+    background: var(--white);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(100%);
+    transition: .4s;
 }
 .calender_form{
     border-bottom: 1px solid #716E6EBD;

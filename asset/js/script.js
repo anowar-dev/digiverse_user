@@ -59,44 +59,45 @@ searchbtn.addEventListener("focus", function () {
      width: "100%",
    });
 
-
-   Datepicker
-    $("#fullCalendar").fullCalendar({
-      header: {
-        left: "prev,next today",
-        center: "title",
-        right: "month,agendaWeek,agendaDay",
-      },
-      defaultView: "month",
-      events: [
-        {
-          title: "Event 1",
-          start: "2024-01-31",
-        },
-        {
-          title: "Event 2",
-          start: "2024-02-01",
-          end: "2024-02-03",
-        },
-        // Add more events as needed
-      ],
-    });
-
+   Datepicker;
+   $("#fullCalendar").fullCalendar({
+     header: {
+       left: "prev,next today",
+       center: "title",
+       right: "month,agendaWeek,agendaDay",
+     },
+     defaultView: "month",
+     events: [
+       {
+         title: "Event 1",
+         start: "2024-01-31",
+       },
+       {
+         title: "Event 2",
+         start: "2024-02-01",
+         end: "2024-02-03",
+       },
+       // Add more events as needed
+     ],
+   });
 
  });
 
  
 
-// Location Search
-$(document).ready(function () {
+$(document).ready(function(){
+  // Location Search
   $(".location_select").selectpicker();
-});
+})
+
 
 
 // user logout
 $(document).ready(function(){
-  $(".user_pannel").click(function(){
-    $(".user_account").toggleClass('display_block');
+  $(".user_pannel").click(function () {
+    $(".user_account").toggleClass("display_block");
   });
 })
+
+
 
