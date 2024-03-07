@@ -44,4 +44,18 @@ $(document).ready(function () {
       }
     });
   });
+
+
+
+  //Calender Focus
+  $(".cNumber").click(function(){
+    currentElement = $(this);
+   if(currentElement.hasClass("calender_data_focus")){
+
+   }
+   else{
+    $(".cNumber").removeClass("calender_data_focus");
+    currentElement.addClass("calender_data_focus");
+   }   
+  });
 });

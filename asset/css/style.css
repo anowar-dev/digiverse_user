@@ -937,11 +937,16 @@ color: var(--black30);
     background: rgba(24, 25, 90, .3);
     width: 100vw;
     height: 100vh;
+    z-index: 1;
 }
 .symtomp_popup .symtomp_popup_inner{
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 90%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     transform: translate(-50%, -50%);
     background: var(--white);
     padding: 1.5rem;
@@ -1005,9 +1010,12 @@ color: var(--black30);
     outline-color: transparent;
     border-color: transparent;
     background: #f4f4f4;
-    width: 360px;
-    height: 52px;
-    line-height: 52px;
+    width: 98%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    line-height: 50px;
     border-radius: .5rem;
 }
 .popup_body .popup_input::placeholder{
@@ -1220,6 +1228,16 @@ color: var(--black30);
 .symtomp_history_body{
     padding-bottom: 1rem;
 }
+.history_popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100%;
+    background: rgba(0, 0, 0, .2);
+    z-index: 99999999999999999999999999999999999999999;
+}
 .history_popup_body{
     margin-top: 2rem;
 }
@@ -1237,11 +1255,18 @@ color: var(--black30);
     padding: 0 .6rem;
 }
 .history_popup_inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90vw;
     max-width: 480px;
     margin: auto;
     max-height: 90vh;
     overflow-y: auto;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: .5rem;
 }
 .history_popup_btn button{
     background: var(--blue);
@@ -2128,10 +2153,7 @@ color: var(--black30);
     transform: translate(0);
     transition: .4s;
 }
-/* .translate_100{
-    transform: translate(100%);
-    transition: .4s;
-} */
+
 .dr_calender_year_contents.translate_0{
     transform: translate(0);
     transition: .4s;
@@ -2140,10 +2162,7 @@ color: var(--black30);
     transform: translate(-100%);
     transition: .4s;
 }
-/* .dr_calender_year_contents.translate_100{
-    transform: translate(100%);
-    transition: .4s;
-} */
+
 .dr_calender_year_contents{
     background: var(--white);
     position: absolute;
@@ -2184,7 +2203,7 @@ color: var(--black30);
     background: transparent;
     color: var(--black);
 }
-.calender_data_inner .calender_input:focus{
+.cNumber.calender_data_focus{
     border-radius: .5rem;
     background: #1A395A;
     color: var(--white);
@@ -2915,7 +2934,7 @@ color: var(--black30);
     }
 
 }
-/* Max-width 500px */
+/* Max-width 520px */
 @media (max-width: 520px) {
     /*Symptom Page */
     .symtomp_content .symtomp_header{
@@ -2924,6 +2943,31 @@ color: var(--black30);
     .symtomp_body_content .symtomp_select_group{
         margin: auto;
     } 
+    .popup_header .popup_depertment{
+        font-size: 1rem;
+    }
+    .popup_header .dep_popup_close{
+        width: 1.6rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
+    }
+    .popup_body .popup_label{
+        font-size: 14px;
+    }
+    .popup_body .popup_input{
+        font-size: 1rem;
+    }
+    .symtomp_popup .symtomp_popup_inner{
+        padding: 0.5rem;
+    }
+    .symtomp_popup_inner .popup_header{
+        column-gap: 1rem;
+    }
+    .history_popup_btn button{
+        width: 6rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
 
     /* Hospital page */
     .hospital_content_header .hospital_profile{

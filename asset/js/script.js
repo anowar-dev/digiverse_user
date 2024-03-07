@@ -12,7 +12,7 @@ for (let i = 0; i < sitebarmenu.length; i++) {
 }
 
 
-// Popup open btn
+// Popup open for predict btn
 let predic_btn = document.querySelectorAll(".popup_open");
 for (let i = 0; i < predic_btn.length; i++) {
   predic_btn[i].addEventListener("click", function () {
@@ -30,14 +30,8 @@ for (let i = 0; i < popup_close.length; i++) {
   });
 }
 
-// Symtomp popup close ok btn
-let popup_close_ok = document.querySelectorAll(".popup_ok");
-for (let i = 0; i < popup_close_ok.length; i++) {
-  popup_close_ok[i].addEventListener("click", function () {
-    let popup_ok = this.parentElement.parentElement.parentElement;
-    popup_ok.classList.add("display_none");
-  });
-}
+
+
 
 // Search bar
 let searchbtn = document.querySelector(".symptom_search_btn_profile");
